@@ -18,9 +18,7 @@ class FuncionariosController extends Controller
 
     public function index(Request $request)
     {
-        $funcionarios = Funcionario::query()
-            ->orderBy('nome_completo')
-            ->get();
+        $funcionarios = Funcionario::paginate(2);
         $mensagem = $request->session()->get('mensagem');
 
         return view('funcionarios.index', compact('funcionarios', 'mensagem'));

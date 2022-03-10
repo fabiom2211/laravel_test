@@ -75,7 +75,7 @@
         @endforeach
         </tbody>
     </table>
-
+    {{ $funcionarios->links() }}
 <script>
     function toggleInput(funcionarioId) {
         const nomeFuncionarioEl = document.getElementById(`nome-funcionario-${funcionarioId}`);
