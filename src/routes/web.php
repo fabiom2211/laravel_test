@@ -11,6 +11,11 @@
 |
 */
 
+Route::get('/upload', 'FileUploadController@index');
+
+Route::get('/upload-file', 'FileUploadController@createForm');
+Route::post('/upload-file', 'FileUploadController@fileUpload')->name('fileUpload');
+
 Route::get('/funcionarios', 'FuncionariosController@index')->name("lista_funcionario");
 Route::get('/funcionarios/criar', 'FuncionariosController@create')->name("form_criar_funcionario");
 Route::post('/funcionarios/criar', 'FuncionariosController@store');

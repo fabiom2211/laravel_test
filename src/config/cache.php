@@ -13,12 +13,12 @@ return [
     | using this caching library. This connection is used when another is
     | not explicitly specified when executing a given caching function.
     |
-    | Supported: "apc", "array", "database", "file",
+    | Supported: "apc", "array", "database", "upload",
     |            "memcached", "redis", "dynamodb"
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => env('CACHE_DRIVER', 'upload'),
 
     /*
     |--------------------------------------------------------------------------
@@ -47,8 +47,8 @@ return [
             'connection' => null,
         ],
 
-        'file' => [
-            'driver' => 'file',
+        'upload' => [
+            'driver' => 'upload',
             'path' => storage_path('framework/cache/data'),
         ],
 

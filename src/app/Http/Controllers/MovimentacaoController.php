@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Funcionario;
 use App\Http\Requests\MovimentacaoFormRequest;
-use App\Movimentacao;
+use App\Models\Funcionario;
+use App\Models\Movimentacao;
 use Illuminate\Support\Facades\Auth;
 
 class MovimentacaoController extends Controller

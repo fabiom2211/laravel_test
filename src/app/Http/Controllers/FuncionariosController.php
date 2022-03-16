@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Funcionario;
 use App\Http\Requests\FuncionariosFormRequest;
+use App\Models\Funcionario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -45,7 +45,7 @@ class FuncionariosController extends Controller
         $data = $request->except('_token');
         $data["senha"] = Hash::make($data['senha']); //Convertendo a senha para o hash do laravel
 
-        $user = new \App\User();
+        $user = new \App\Models\User();
         $user->name = $data['nome_completo'];
         $user->password = $data['senha'];
         $user->email = $data['login'];
